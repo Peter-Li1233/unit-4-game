@@ -24,8 +24,40 @@ $(".button").on("click",function(){
 
     // get the  value of the crystall button;
     // update total score = total score +random value of the clicked crystall
+    var buttonValue = $(this).attr("value");
     totalScore += parseInt($(this).attr("value"));
     console.log(totalScore);
+    //debugger;
+    console.log($(this).attr("id"));
+    //Display the button value when clicked, make it disappear after others clicked;
+    if ($(this).attr("id") ==="b1") {
+        $("#value1").html(buttonValue);
+        $("#value1").css("display","block");
+        $("#value2").css("display","none");
+        $("#value3").css("display","none");
+        $("#value4").css("display","none");
+        } 
+    if ($(this).attr("id") ==="b2") {
+        $("#value2").html(buttonValue);
+        $("#value2").css("display","block");
+        $("#value1").css("display","none");
+        $("#value3").css("display","none");
+        $("#value4").css("display","none");
+        }
+    if ($(this).attr("id") ==="b3") {
+        $("#value3").html(buttonValue);
+        $("#value3").css("display","block");
+        $("#value1").css("display","none");
+        $("#value2").css("display","none");
+        $("#value4").css("display","none");
+        }
+    if ($(this).attr("id") ==="b4") {
+        $("#value4").html(buttonValue);
+        $("#value4").css("display","block");
+        $("#value1").css("display","none");
+        $("#value2").css("display","none");
+        $("#value3").css("display","none");
+        }   
   
     // display the value of the crystal buttion;
     $("#total-score").html(totalScore);
@@ -77,6 +109,11 @@ function reset() {
     totalScore = 0;
     //display total score at right position;
     $("#total-score").html(totalScore);
+    //Hide the button value
+    $("#value1").css("display","none");
+    $("#value2").css("display","none");
+    $("#value3").css("display","none");
+    $("#value4").css("display","none");
 }
 function randomIntfromInterval(min,max) {
     return Math.floor (Math.random()*(max-min+1)+min);
