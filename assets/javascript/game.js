@@ -9,7 +9,9 @@ var totalScore;
 //define 4 variable to store the random value of 4 crystalls (1-12);
 var crystal1, crystal2, crystal3, crystal4
 //addEventListener to window object;
-window.addEventListener('load',function() {
+window.addEventListener('load',game); 
+
+function game() {
 //initialize:
 reset();
     //generate the random number between (19 -120);
@@ -20,7 +22,9 @@ reset();
     //display total score at right position;
 
 //when the user click any crystal:
-$(".button").on("click",function(){
+$(".button").on("click",play);
+
+    function play(){
 
     // get the  value of the crystall button;
     // update total score = total score +random value of the clicked crystall
@@ -82,7 +86,7 @@ $(".button").on("click",function(){
        //reset
        reset();
     }
-});
+}
 //reset function: 
 function reset() {
     //generate the random number between (19 -120);
@@ -118,4 +122,4 @@ function reset() {
 function randomIntfromInterval(min,max) {
     return Math.floor (Math.random()*(max-min+1)+min);
 }
-});    
+}   
